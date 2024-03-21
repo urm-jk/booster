@@ -10,129 +10,78 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          title: const Text(
+            'First Screen of My apl',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
-        body: Row(
+        body: const Row(
           children: [
-            Column(
+            MyColumn(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  color: Colors.amber,
-                  height: 70,
-                  width: 70,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.red,
-                  height: 100,
-                  width: 100,
-                  child: const Center(
-                    child: Text(
-                      '2',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.cyan,
-                  height: 130,
-                  width: 130,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-              ],
             ),
-            Column(
+            MyColumn(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  color: Colors.amber,
-                  height: 70,
-                  width: 70,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.red,
-                  height: 100,
-                  width: 100,
-                  child: const Center(
-                    child: Text(
-                      '2',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.cyan,
-                  height: 130,
-                  width: 130,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-              ],
             ),
-            Column(
+            MyColumn(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  color: Colors.amber,
-                  height: 70,
-                  width: 70,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.red,
-                  height: 100,
-                  width: 100,
-                  child: const Center(
-                    child: Text(
-                      '2',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.cyan,
-                  height: 130,
-                  width: 130,
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(fontSize: 50),
-                    ),
-                  ),
-                ),
-              ],
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyColumn extends StatelessWidget {
+  const MyColumn({
+    super.key,
+    required this.mainAxisAlignment,
+  });
+  final MainAxisAlignment mainAxisAlignment;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: mainAxisAlignment,
+      children: [
+        Container(
+          color: Colors.red,
+          height: 90,
+          width: 90,
+          child: const Center(
+            child: Text(
+              '1',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          height: 110,
+          width: 110,
+          child: const Center(
+            child: Text(
+              '2',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          height: 130,
+          width: 130,
+          child: const Center(
+            child: Text(
+              '3',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
